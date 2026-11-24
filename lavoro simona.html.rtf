@@ -1,0 +1,507 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2577
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fswiss\fcharset0 Helvetica;\f2\froman\fcharset0 Times-Roman;
+\f3\fmodern\fcharset0 CourierNewPSMT;\f4\fnil\fcharset0 AppleColorEmoji;\f5\fnil\fcharset0 Menlo-Regular;
+\f6\fnil\fcharset0 AppleSymbols;\f7\fnil\fcharset128 HiraginoSans-W3;}
+{\colortbl;\red255\green255\blue255;\red220\green220\blue220;\red183\green187\blue184;\red52\green55\blue54;
+\red24\green24\blue24;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c89020\c89020\c89020;\cssrgb\c76863\c78039\c77255;\cssrgb\c26667\c27843\c27451;
+\cssrgb\c12157\c12157\c12157;\cssrgb\c100000\c100000\c100000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0\fs36 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Disequazioni_in_gioco.html\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs24 \cf2 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0\fs21 \cf3 \strokec3 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb4 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \
+\
+\pard\pardeftab720\sl480\partightenfactor0
+
+\f2\fs28 \cf2 \strokec2 100%\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0\fs40 \cf3 \strokec3 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs21 \cf3 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs24 \cf2 \strokec2 \
+\
+\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs21 \cf2 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \
+\
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs21 \cf5 \cb6 \strokec5 <!DOCTYPE html>\
+<html lang="it">\
+<head>\
+<meta charset="utf-8">\
+<meta name="viewport" content="width=device-width, initial-scale=1">\
+<title>Disequazioni in gioco</title>\
+<style>\
+html\{font-size:18px\}html.lim\{font-size:24px\}\
+body\{margin:0;font-family:Arial,Helvetica,sans-serif;background:#fff8e7;color:#2b2b3a;line-height:1.5\}\
+header\{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;padding:10px 16px;background:#ffe3b8\}\
+header h1\{font-size:1.2rem;margin:0;cursor:pointer\}\
+main\{max-width:900px;margin:0 auto;padding:14px\}\
+.btn\{font:inherit;padding:.5em .9em;border:3px solid #fff;border-radius:16px;background:#cde4ff;color:#2b2b3a;cursor:pointer;min-height:46px\}\
+.btn:hover\{filter:brightness(.96)\}.btn:focus-visible\{outline:4px solid #7a8cff\}\
+.btn[disabled]\{opacity:.45;cursor:not-allowed\}\
+.grid\{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px\}\
+.card\{text-align:left;padding:14px;border-radius:18px;border:3px solid #fff;font:inherit;cursor:pointer;color:#2b2b3a\}\
+.card b\{display:block;font-size:1.05rem\}.card span\{font-size:.85rem\}\
+.L1\{background:#d4f1d8\}.L2\{background:#d3e5fb\}.L3\{background:#ead7f7\}\
+.box\{background:#fff;border-radius:16px;padding:12px 16px;margin:10px 0;border:3px solid #ffe3b8\}\
+.rules\{background:#fff3c4;border-color:#fff3c4\}\
+.sig\{font-size:.85rem;color:#4a4a5e\}\
+.nl\{width:100%;height:auto;background:#fff;border-radius:12px\}\
+.opts\{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:10px 0\}\
+.opt\{font-size:1.1rem;background:#fff;border:3px solid #cde4ff;border-radius:16px;padding:10px;cursor:pointer;font-family:inherit;color:inherit\}\
+.opt:hover\{background:#eef5ff\}.opt.bad\{background:#ffd9d9;border-color:#ffd9d9;opacity:.6;cursor:not-allowed\}\
+.opt.good\{background:#c8ecc9;border-color:#c8ecc9\}.opt svg\{pointer-events:none\}\
+.sys\{display:inline-flex;align-items:center;gap:8px;font-weight:bold;font-size:1.2rem\}\
+.sys i\{font-style:normal;font-size:2.4rem;color:#7aa6e6\}.sys div\{text-align:left\}\
+.top\{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center\}\
+.toast\{position:fixed;left:50%;top:80px;transform:translateX(-50%);padding:14px 26px;border-radius:30px;font-size:1.6rem;font-weight:bold;z-index:9;box-shadow:0 6px 18px #0002;animation:pop .4s\}\
+.toast.ok\{background:#c8ecc9\}.toast.no\{background:#ffe0c2\}\
+@keyframes pop\{from\{transform:translateX(-50%) scale(.6);opacity:0\}to\{transform:translateX(-50%) scale(1);opacity:1\}\}\
+.chips\{display:flex;flex-wrap:wrap;gap:6px\}.chip\{min-width:44px\}\
+select\{font:inherit;font-size:1.1rem;padding:6px;border-radius:10px;border:2px solid #cde4ff;background:#fff\}\
+.cmp\{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:1.2rem;margin:8px 0\}\
+.mode .on\{background:#ffd9b3\}\
+.line\{display:block;width:100%;text-align:left;margin:6px 0;font-size:1.1rem\}\
+.good2\{background:#e3f6e3\}.bar\{height:10px;background:#ffe3b8;border-radius:6px;overflow:hidden\}.bar i\{display:block;height:100%;background:#9bd6a0;width:100%\}\
+.stars\{font-size:2.2rem\}\
+</style>\
+</head>\
+<body>\
+<header>\
+<h1 onclick="home()">
+\f4 \uc0\u55356 \u57266 
+\f3  Disequazioni in gioco</h1>\
+<div><button class="btn" onclick="guida()">
+\f4 \uc0\u55357 \u56536 
+\f3  Guida veloce</button>\
+<button class="btn" onclick="sigle()">
+\f4 \uc0\u55357 \u56534 
+\f3  Sigle</button>\
+<button class="btn" id="bs" onclick="tsnd()">
+\f4 \uc0\u55357 \u56586 
+\f3  Voce: s\'ec</button>\
+<button class="btn" onclick="document.documentElement.classList.toggle('lim')">
+\f4 \uc0\u55357 \u56590 
+\f3  Scritte grandi (LIM)</button></div>\
+</header>\
+<main id="app"></main>\
+<script>\
+const INF=Infinity,$=s=>document.querySelector(s);\
+const r=(a,b)=>Math.floor(Math.random()*(b-a+1))+a,pick=a=>a[r(0,a.length-1)],shuf=a=>a.map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(x=>x[1]);\
+const f=n=>n<0?'\uc0\u8722 '+(-n):''+n,flip=o=>(\{'<':'>','>':'<','\u8804 ':'\u8805 ','\u8805 ':'\u8804 '\})[o];\
+const cmp=(a,o,b)=>o=='<'?a<b:o=='>'?a>b:o=='\uc0\u8804 '?a<=b:a>=b;\
+const from=(o,s)=>o=='>'?\{a:s,ai:0,b:INF,bi:0\}:o=='\uc0\u8805 '?\{a:s,ai:1,b:INF,bi:0\}:o=='<'?\{a:-INF,ai:0,b:s,bi:0\}:\{a:-INF,ai:0,b:s,bi:1\};\
+const emp=v=>v.a>v.b||(v.a==v.b&&!(v.ai&&v.bi));\
+function inter(p,q)\{let a,ai,b,bi;if(p.a==q.a)\{a=p.a;ai=p.ai&&q.ai\}else if(p.a>q.a)\{a=p.a;ai=p.ai\}else\{a=q.a;ai=q.ai\}\
+if(p.b==q.b)\{b=p.b;bi=p.bi&&q.bi\}else if(p.b<q.b)\{b=p.b;bi=p.bi\}else\{b=q.b;bi=q.bi\}return\{a,ai,b,bi\}\}\
+const eq=(p,q)=>(emp(p)&&emp(q))||(!emp(p)&&!emp(q)&&p.a==q.a&&p.b==q.b&&(p.a==-INF||!!p.ai==!!q.ai)&&(p.b==INF||!!p.bi==!!q.bi));\
+const has=(v,x)=>!emp(v)&&(x>v.a||(v.ai&&x==v.a))&&(x<v.b||(v.bi&&x==v.b));\
+function txt(v)\{if(emp(v))return'
+\f5 \uc0\u8709 
+\f3  (nessuna soluzione)';if(v.a==v.b)return'x = '+f(v.a);\
+if(v.a==-INF)return'x '+(v.bi?'\uc0\u8804 ':'<')+' '+f(v.b);if(v.b==INF)return'x '+(v.ai?'\u8805 ':'>')+' '+f(v.a);\
+return f(v.a)+' '+(v.ai?'\uc0\u8804 ':'<')+' x '+(v.bi?'\u8804 ':'<')+' '+f(v.b)\}\
+const ints=v=>\{let o=[];for(let x=-40;x<=40;x++)if(has(v,x))o.push(x);return o\};\
+const lin=(k,m)=>(k==1?'':k==-1?'\uc0\u8722 ':f(k))+'x'+(m?(m>0?' + '+m:' \u8722  '+(-m)):'');\
+function raw(k,m,op,n)\{const s=(n-m)/k;return\{k,m,op,n,txt:lin(k,m)+' '+op+' '+f(n),iv:from(k<0?flip(op):op,s),s,ok:x=>cmp(k*x+m,op,n)\}\}\
+const mk=(k,m,op,s)=>raw(k,m,op,k*s+m);\
+function cons(kind,s,inc,neg)\{const o2=kind=='lo'?(inc?'\uc0\u8805 ':'>'):(inc?'\u8804 ':'<'),k=neg?pick([-1,-2,-3]):pick([1,2,3]);return mk(k,r(-4,4),neg?flip(o2):o2,s)\}\
+const sysH=a=>`<div class="sys"><i>\{</i><div>$\{a.map(x=>x.txt||x).join('<br>')\}</div></div>`;\
+const hs=(a,b)=>sysH([a,b]);\
+function nl(rows,o=\{\})\{const lo=o.lo??-10,hi=o.hi??10,sm=o.sm,W=sm?300:680,pad=sm?14:30,st=(W-2*pad)/(hi-lo),X=v=>pad+(v-lo)*st,rh=sm?30:46,H=rows.length*rh+(sm?26:36),ay=H-(sm?18:26);\
+let s=`<svg viewBox="0 0 $\{W\} $\{H\}" class="nl" role="img" aria-label="retta dei numeri">`;\
+rows.forEach((w,i)=>\{const y=rh*i+rh*.62,v=w.v;if(w.label&&!sm)s+=`<text x="$\{pad\}" y="$\{y-13\}" fill="$\{w.c\}" font-weight="bold" font-size="15">$\{w.label\}</text>`;\
+if(!emp(v))\{const xa=v.a==-INF?0:X(Math.max(v.a,lo)),xb=v.b==INF?W:X(Math.min(v.b,hi));\
+s+=`<line x1="$\{xa\}" x2="$\{xb\}" y1="$\{y\}" y2="$\{y\}" stroke="$\{w.c\}" stroke-width="$\{sm?6:9\}" stroke-linecap="round"/>`;\
+[[v.a,v.ai],[v.b,v.bi]].forEach(([t,inc])=>\{if(isFinite(t))s+=`<circle cx="$\{X(t)\}" cy="$\{y\}" r="$\{sm?6:10\}" fill="$\{inc?w.c:'#fff'\}" stroke="$\{w.c\}" stroke-width="3"/>`\})\}\});\
+s+=`<line x1="0" x2="$\{W\}" y1="$\{ay\}" y2="$\{ay\}" stroke="#444" stroke-width="2"/>`;\
+for(let t=lo;t<=hi;t++)\{s+=`<line x1="$\{X(t)\}" x2="$\{X(t)\}" y1="$\{ay-5\}" y2="$\{ay+5\}" stroke="#444"/>`;if(!sm||t%5==0)s+=`<text x="$\{X(t)\}" y="$\{ay+(sm?17:21)\}" text-anchor="middle" font-size="$\{sm?11:13\}">$\{f(t)\}</text>`\}\
+return s+'</svg>'\}\
+const C1='#e07a5f',C2='#3d85c6',C3='#4caf7a',C4='#9b6fc7';\
+function distr(v)\{const o=[],add=x=>\{if(!emp(x)&&!eq(x,v)&&!o.some(y=>eq(x,y)))o.push(x)\};\
+if(isFinite(v.a))\{add(\{...v,ai:!v.ai\});add(\{...v,a:v.a+1\});add(\{...v,a:v.a-1\})\}\
+if(isFinite(v.b))\{add(\{...v,bi:!v.bi\});add(\{...v,b:v.b+1\});add(\{...v,b:v.b-1\})\}\
+if(v.a==-INF)add(from(v.bi?'\uc0\u8805 ':'>',v.b));else if(v.b==INF)add(from(v.ai?'\u8804 ':'<',v.a));else add(\{a:-v.b,ai:v.bi,b:-v.a,bi:v.ai\});\
+return shuf(o)\}\
+const ivOpts=v=>shuf([[txt(v),1],...distr(v).slice(0,3).map(x=>[txt(x),0])]).map(([h,ok])=>(\{h,ok\}));\
+function randIv(i)\{const t=r(0,2)&&i>=2?'seg':'ray';if(t=='ray')return from(pick(['<','>','\uc0\u8804 ','\u8805 ']),r(-7,7));const a=r(-8,3);return\{a,ai:r(0,1),b:a+r(2,7),bi:r(0,1)\}\}\
+function twoRays(cls)\{for(let t=0;t<999;t++)\{const p=from(pick(['<','>','\uc0\u8804 ','\u8805 ']),r(-7,7)),q=from(pick(['<','>','\u8804 ','\u8805 ']),r(-7,7)),I=inter(p,q);\
+const c=emp(I)?'vuoto':(I.a==-INF||I.b==INF)?'semiretta':'finito';if(!cls||c==cls)return\{p,q,I,c\}\}\}\
+function steps(q)\{const s=q.s,k=q.k;return`1) Sposto il numero $\{f(q.m)\} dall\'92altra parte e cambio il suo segno: $\{lin(k,0)\} $\{q.op\} $\{f(q.n-q.m)\}.<br>2) Divido per $\{f(k)\}`+(k<0?' (\'e8 <b>negativo</b>: il segno <b>si gira</b>!)':' (\'e8 positivo: il segno resta uguale)')+`.<br>3) Risultato: <b>$\{txt(q.iv)\}</b>`\}\
+function mc(p,vis,o,why,help,extra)\{return\{t:'mc',p,vis:vis||'',o,why:why||'',help:help||'',...extra\}\}\
+const SIG=\{'x':'x = incognita, cio\'e8 il numero che cerchiamo','
+\f5 \uc0\u8477 
+\f3 ':'
+\f5 \uc0\u8477 
+\f3  = insieme dei numeri reali, cio\'e8 tutti i numeri della retta (anche quelli con la virgola)','\uc0\u9675 ':'\u9675  = pallino vuoto: il numero NON \'e8 incluso','\u9679 ':'\u9679  = pallino pieno: il numero \'e8 incluso',\
+'\uc0\u8804 ':'\u8804  = minore o uguale; \u8805  = maggiore o uguale','
+\f5 \uc0\u8709 
+\f3 ':'
+\f5 \uc0\u8709 
+\f3  = insieme vuoto: significa \'abnessuna soluzione\'bb','C.E.':'C.E. = Condizioni di Esistenza (i numeri che x non pu\'f2 avere, per esempio quando x \'e8 in una frazione sotto la linea)','LIM':'LIM = Lavagna Interattiva Multimediale','V/F':'V/F = Vero o Falso','es.':'es. = esempio','sis.':'sistema = pi\'f9 disequazioni scritte insieme'\};\
+const sigDesc=a=>a.map(k=>SIG[k]).join(' \'b7 ');\
+const STS=[['Vero','Falso'],\
+['Dividendo per un numero negativo, il segno della disequazione si gira.',1,'Esatto: &lt; diventa &gt; e \uc0\u8804  diventa \u8805 .'],\
+['Il pallino pieno si usa con i segni &lt; e &gt;.',0,'No: con &lt; e &gt; si usa il pallino <b>vuoto</b>. Il pieno si usa con \uc0\u8804  e \u8805 .'],\
+['In x \uc0\u8805  3 il numero 3 va bene.',1,'S\'ec: \u8805  vuol dire \'abmaggiore <b>o uguale</b>\'bb, quindi 3 \'e8 incluso.'],\
+['Il pallino vuoto significa che il numero \'e8 incluso.',0,'No: pallino vuoto = numero escluso.'],\
+['Se divido per 2 il segno si gira.',0,'No: 2 \'e8 positivo. Il segno si gira solo con i numeri negativi.'],\
+['In un sistema si cerca la parte comune a tutte le disequazioni.',1,'Giusto: la soluzione \'e8 l\'92intersezione, cio\'e8 la parte comune.'],\
+['Il sistema x &gt; 5 e x &lt; 2 ha soluzioni.',0,'No: nessun numero \'e8 pi\'f9 grande di 5 e pi\'f9 piccolo di 2. Il sistema \'e8 impossibile: 
+\f5 \uc0\u8709 
+\f3 .'],\
+['La soluzione di una disequazione di solito \'e8 un solo numero.',0,'No: di solito sono <b>tanti</b> numeri (un intervallo o una semiretta).']];\
+const ERR=[\
+\{l:['\uc0\u8722 2x &lt; 6','Divido per \u8722 2','x &lt; \u8722 3'],e:2,w:'Dividendo per un numero negativo il segno si gira: la soluzione giusta \'e8 <b>x &gt; \u8722 3</b>.'\},\
+\{l:['2x \uc0\u8722  1 \u8805  5','2x \u8805  5 + 1','x \u8805  3'],e:-1,w:'\'c8 tutto giusto! Hai fatto bene a non trovare errori.'\},\
+\{l:['Sistema: x &gt; 2 e x &lt; 6','Disegno x &lt; 6 con il pallino pieno \uc0\u9679 ','Soluzione: 2 &lt; x &lt; 6'],e:1,w:'Con &lt; il pallino deve essere <b>vuoto</b> \u9675  (il 6 non \'e8 incluso).'\},\
+\{l:['Sistema: x &gt; 1 e x &lt; 4','Disegno le due linee','Soluzione: tutti i numeri delle due linee (unione)'],e:2,w:'Nel sistema serve la <b>parte comune</b> (intersezione), non l\'92unione: <b>1 &lt; x &lt; 4</b>.'\},\
+\{l:['3x + 2 \uc0\u8804  11','3x \u8804  11 + 2','x \u8804  13/3'],e:1,w:'Sposto +2 e cambio il segno: 3x \u8804  11 <b>\u8722 </b> 2, cio\'e8 3x \u8804  9, quindi x \u8804  3.'\},\
+\{l:['\uc0\u8722 x \u8805  1','Moltiplico per \u8722 1','x \u8805  \u8722 1'],e:2,w:'Moltiplicando per \u8722 1 il segno si gira: <b>x \u8804  \u8722 1</b>.'\},\
+\{l:['4 \uc0\u8722  x &gt; 1','\u8722 x &gt; 1 \u8722  4  \u8594   \u8722 x &gt; \u8722 3','Cambio il segno e giro il verso: x &lt; 3'],e:-1,w:'Tutto giusto! Il segno si gira perch\'e9 cambio segno a x.'\}];\
+const G=[\
+\{id:1,l:1,n:'Pallino giusto',e:'
+\f4 \uc0\u9898 
+\f3 ',d:'Pallino vuoto o pieno?',rules:'Leggi la disequazione. Il numero \'e8 incluso? Scegli il pallino giusto.',sig:['\uc0\u9675 ','\u9679 ','\u8804 ','x'],N:6,\
+gen:i=>\{const o=pick(['<','>','\uc0\u8804 ','\u8805 ']),s=r(-6,6),inc=o=='\u8804 '||o=='\u8805 ';return mc(`Nella disequazione <b>x $\{o.replace('<','&lt;').replace('>','&gt;')\} $\{f(s)\}</b>, che pallino metto sul $\{f(s)\}?`,'',\
+[\{h:'\uc0\u9675  Pallino vuoto (il numero NON va bene)',ok:!inc\},\{h:'\u9679  Pallino pieno (il numero va bene)',ok:inc\}],inc?`Il segno $\{o\} comprende anche \'abuguale\'bb: il $\{f(s)\} va bene, pallino <b>pieno</b>.`:`Il segno $\{o\} non comprende \'abuguale\'bb: il $\{f(s)\} non va bene, pallino <b>vuoto</b>.`,'',\{vis:nl([\{v:from(o,s),c:C1\}])\})\}\},\
+\{id:2,l:1,n:'Leggi il disegno',e:'
+\f4 \uc0\u55357 \u56384 
+\f3 ',d:'Dalla retta alla disequazione',rules:'Guarda la parte colorata sulla retta reale (
+\f5 \uc0\u8477 
+\f3 ). Scegli la disequazione giusta.',sig:['
+\f5 \uc0\u8477 
+\f3 ','x','\uc0\u9675 ','\u9679 '],N:6,\
+gen:i=>\{const v=i<3?from(pick(['<','>','\uc0\u8804 ','\u8805 ']),r(-7,7)):randIv(i);return mc('Quale disequazione descrive la parte colorata?',nl([\{v,c:C2\}]),ivOpts(v),`Pallino $\{'vuoto \u9675  = escluso, pieno \u9679  = incluso'\}. La soluzione \'e8 <b>$\{txt(v)\}</b>.`)\}\},\
+\{id:3,l:1,n:'Quale numero va bene?',e:'
+\f4 \uc0\u55357 \u56610 
+\f3 ',d:'Provo i numeri',rules:'Un solo numero rende vera la disequazione. Trovalo!',sig:['x'],N:6,\
+gen:i=>\{const q=i<3?mk(1,0,pick(['<','>','\uc0\u8804 ','\u8805 ']),r(-5,5)):mk(pick([2,3]),pick([-3,-2,1,2,4]),pick(['<','>','\u8804 ','\u8805 ']),r(-4,4));\
+const g=[],b=[];for(let x=-10;x<=10;x++)(q.ok(x)?g:b).push(x);const c=pick(g),w=shuf(b).slice(0,3);\
+return mc(`Quale numero rende vera <b>$\{q.txt.replace('<','&lt;').replace('>','&gt;')\}</b> ?`,'',shuf([c,...w]).map(x=>(\{h:f(x),ok:x==c\})),`Provo $\{f(c)\}: $\{q.k==1?f(c):f(q.k)+'\'b7'+(c<0?'('+f(c)+')':c)\}$\{q.m?(q.m>0?' + '+q.m:' \uc0\u8722  '+(-q.m)):''\} = $\{f(q.k*c+q.m)\}, e $\{f(q.k*c+q.m)\} $\{q.op\} $\{f(q.n)\} \'e8 vero.`)\}\},\
+\{id:4,l:1,n:'Tiro al bersaglio',e:'
+\f4 \uc0\u55356 \u57263 
+\f3 ',d:'Scrivi la disequazione',rules:'Il bersaglio \'e8 la parte arancione. Costruisci la disequazione con i menu: la tua risposta (blu) deve coprire il bersaglio, senza sforare.',sig:['x','
+\f5 \uc0\u8477 
+\f3 ','\uc0\u9675 ','\u9679 '],N:5,\
+gen:i=>(\{t:'comp',iv:i<2?from(pick(['<','>','\uc0\u8804 ','\u8805 ']),r(-7,7)):randIv(3),sunk:[]\})\},\
+\{id:5,l:1,n:'Vero o Falso: le regole',e:'
+\f4 \uc0\u9989 
+\f3 ',d:'Regole da ricordare',rules:'Leggi la frase. \'c8 vera o falsa? (V/F = Vero o Falso)',sig:['V/F','\uc0\u9675 ','\u9679 ','
+\f5 \uc0\u8709 
+\f3 '],N:8,\
+gen:i=>\{const s=STS[i+1];return mc(s[0],'',[\{h:'
+\f4 \uc0\u9989 
+\f3  Vero',ok:s[1]==1\},\{h:'
+\f4 \uc0\u10060 
+\f3  Falso',ok:s[1]==0\}],s[2])\}\},\
+\{id:6,l:2,n:'Risolvi e scegli',e:'
+\f4 \uc0\u55358 \u56814 
+\f3 ',d:'Risolvo una disequazione',rules:'Risolvi la disequazione (puoi chiedere aiuto!). Quando dividi per un numero negativo, il segno si gira.',sig:['x'],N:6,\
+gen:i=>\{const neg=i>=3,q=mk(neg?pick([-1,-2,-3]):pick([2,3,4]),pick([-4,-3,-2,2,3,5]),pick(['<','>','\uc0\u8804 ','\u8805 ']),r(-5,5));\
+return mc(`Risolvi: <b>$\{q.txt.replace('<','&lt;').replace('>','&gt;')\}</b>`,'',ivOpts(q.iv),steps(q),steps(q))\}\},\
+\{id:7,l:2,n:'Indovina il numero',e:'
+\f4 \uc0\u55357 \u56693 \u65039 
+\f3 ',d:'Chi \'e8 l\'92intruso?',rules:'Penso a un numero intero tra \uc0\u8722 10 e 10. Gli indizi sono disequazioni. I numeri che non vanno pi\'f9 bene si spengono. Tocca il numero segreto!',sig:['x'],N:4,\
+gen:i=>\{const n=r(-9,9);let cl=[];const al=()=>\{const a=[];for(let x=-10;x<=10;x++)if(cl.every(c=>c.ok(x)))a.push(x);return a\};\
+while(al().length>1&&cl.length<8)\{const j=cl.length,k=pick([1,2,-1,-2,3]),d=r(0,Math.max(0,3-j));let o2=j%2?pick(['<','\uc0\u8804 ']):pick(['>','\u8805 ']);if(d==0&&j>=2)o2=j%2?'\u8804 ':'\u8805 ';\
+const s=o2=='>'?n-Math.max(d,1):o2=='\uc0\u8805 '?n-d:o2=='<'?n+Math.max(d,1):n+d;cl.push(mk(k,pick([-3,-1,0,2,3]),k<0?flip(o2):o2,s))\}return\{t:'guess',n,cl,seen:1\}\}\},\
+\{id:8,l:2,n:'Battaglia navale',e:'
+\f4 \uc0\u55357 \u56994 
+\f3 ',d:'Affonda le navi',rules:'Le navi sono segmenti o semirette sulla retta reale (
+\f5 \uc0\u8477 
+\f3 ) da \uc0\u8722 10 a 10. Per colpirne una scrivi la disequazione esatta: n\'e9 pi\'f9 grande n\'e9 pi\'f9 piccola.',sig:['
+\f5 \uc0\u8477 
+\f3 ','x','\uc0\u9675 ','\u9679 '],N:4,\
+gen:i=>\{const sh=[\{a:-9,ai:1,b:-4,bi:0\},from('\uc0\u8805 ',5),\{a:-2,ai:0,b:3,bi:1\},\{a:-5,ai:1,b:-5+r(2,4),bi:1\}];const iv=i==3?\{a:r(-6,0),ai:r(0,1),b:r(2,8),bi:r(0,1)\}:sh[i];return\{t:'comp',iv,sunk:sh.slice(0,i).map(v=>v),ship:1\}\}\},\
+\{id:9,l:2,n:'La parte comune',e:'
+\f4 \uc0\u55358 \u56605 
+\f3 ',d:'Dove si incontrano?',rules:'Due condizioni insieme (sistema). Quale parte della retta va bene per tutte e due? Cerca dove le due linee si sovrappongono.',sig:['sis.','
+\f5 \uc0\u8709 
+\f3 ','
+\f5 \uc0\u8477 
+\f3 '],N:6,\
+gen:i=>\{const \{p,q,I\}=twoRays(i<4?r(0,1)?'finito':'semiretta':null);const t=txt(I);const alt=[txt(p),txt(q),...distr(emp(I)?p:I).map(txt)];const o=[t,...[...new Set(alt)].filter(x=>x!=t).slice(0,3)];\
+return mc('Quale \'e8 la <b>parte comune</b> delle due linee?',nl([\{v:p,c:C2,label:'1\'aa condizione'\},\{v:q,c:C3,label:'2\'aa condizione'\}]),shuf(o).map(h=>(\{h,ok:h==t\})),`La parte comune \'e8 dove ci sono <b>tutte e due</b> le linee: <b>$\{t\}</b>.`,'',\{\})\}\},\
+\{id:10,l:2,n:'Semaforo logico',e:'
+\f4 \uc0\u55357 \u56998 
+\f3 ',d:'Finito, semiretta o 
+\f5 \uc0\u8709 
+\f3 ?',rules:'Guarda il sistema gi\'e0 disegnato. La soluzione \'e8 un intervallo finito, una semiretta, oppure nessuna soluzione (
+\f5 \uc0\u8709 
+\f3 )? Puoi giocare senza tempo.',sig:['
+\f5 \uc0\u8709 
+\f3 ','sis.','
+\f5 \uc0\u8477 
+\f3 '],N:6,timer:1,\
+gen:i=>\{const c=pick(['finito','semiretta','vuoto']),\{p,q,I\}=twoRays(c);return mc(`Un sistema con queste due condizioni: <b>$\{hs(\{txt:txt(p)\},\{txt:txt(q)\})\}</b>`,nl([\{v:p,c:C2,label:'1\'aa'\},\{v:q,c:C3,label:'2\'aa'\},\{v:I,c:C4,label:'Soluzione'\}]),\
+[\{h:'
+\f4 \uc0\u55357 \u57314 
+\f3  Intervallo finito',ok:c=='finito'\},\{h:'
+\f4 \uc0\u55357 \u57313 
+\f3  Semiretta',ok:c=='semiretta'\},\{h:'
+\f4 \uc0\u55357 \u56628 
+\f3  Impossibile (
+\f5 \uc0\u8709 
+\f3 )',ok:c=='vuoto'\}],`La soluzione \'e8 <b>$\{txt(I)\}</b>: $\{c=='finito'?'un intervallo con due estremi.':c=='semiretta'?'una semiretta, cio\'e8 una linea che continua senza fine.':'le linee non si toccano, il sistema \'e8 impossibile.'\}`)\}\},\
+\{id:11,l:3,n:'Domino dei sistemi',e:'
+\f6 \uc0\u55356 \u56418 
+\f3 ',d:'Abbina sistema e grafico',rules:'Ogni tessera ha un sistema a sinistra e il suo grafico a destra. Trova il grafico giusto per chiudere la catena.',sig:['sis.','\uc0\u9675 ','\u9679 ','
+\f5 \uc0\u8477 
+\f3 '],N:5,\
+gen:i=>\{const a=r(-7,1),b=a+r(2,6),ia=r(0,1),ib=r(0,1),c1=cons('lo',a,ia,i>2),c2=cons('hi',b,ib,0),I=inter(c1.iv,c2.iv);\
+return mc('Quale grafico appartiene a questo sistema?'+'<br>'+hs(c1,c2),'',shuf([[I,1],...distr(I).slice(0,2).map(v=>[v,0])]).map(([v,ok])=>(\{h:nl([\{v,c:C4\}],\{sm:1\})+`<div style="font-size:.8rem">$\{txt(v)\}</div>`,ok\})),`Risolvo: $\{c1.txt\} \uc0\u8594  $\{txt(c1.iv)\}; $\{c2.txt\} \u8594  $\{txt(c2.iv)\}. Parte comune: <b>$\{txt(I)\}</b>.`)\}\},\
+\{id:12,l:3,n:'Il ponte delle intersezioni',e:'
+\f4 \uc0\u55356 \u57097 
+\f3 ',d:'Escape room: apri i lucchetti',rules:'Per aprire il lucchetto, risolvi il sistema e SOMMA tutti i numeri interi della soluzione. (Gli interi sono i numeri senza virgola: \'85, \uc0\u8722 1, 0, 1, 2, \'85)',sig:['sis.','x'],N:4,\
+gen:i=>\{const a=r(-6,1),b=a+r(3,7),ia=r(0,1),ib=r(0,1),L=[cons('lo',a,ia,i>0),cons('hi',b,ib,i>2)];if(i>=2)L.push(cons('lo',a-2,1,0));\
+const I=L.reduce((p,c)=>inter(p,c.iv),\{a:-INF,ai:0,b:INF,bi:0\}),L2=ints(I),S=L2.reduce((p,c)=>p+c,0);\
+const w=new Set([S]);[ints(\{...I,ai:!I.ai\}),ints(\{...I,bi:!I.bi\}),ints(\{...I,ai:1,bi:1\})].forEach(z=>w.add(z.reduce((p,c)=>p+c,0)));let d=1;while(w.size<4)\{w.add(S+d);w.add(S-d);d++\}\
+const o=shuf([...w].slice(0,4).includes(S)?[...w].slice(0,4):[S,...[...w].filter(x=>x!=S).slice(0,3)]);\
+const hp=`$\{L.map(c=>c.txt.replace('<','&lt;').replace('>','&gt;')+' \uc0\u8594  '+txt(c.iv)).join('<br>')\}<br>Parte comune: <b>$\{txt(I)\}</b>`+nl(L.map((c,j)=>(\{v:c.iv,c:[C2,C3,C1][j]\})).concat([\{v:I,c:C4\}]));\
+return mc(`$\{'
+\f4 \uc0\u55357 \u56594 
+\f3 '.repeat(4-i)\}$\{'
+\f4 \uc0\u55357 \u56595 
+\f3 '.repeat(i)\} Lucchetto $\{i+1\} di 4. Somma dei numeri interi della soluzione di:<br>$\{sysH(L)\}`,'',o.map(x=>(\{h:f(x),ok:x==S\})),`Gli interi sono $\{L2.map(f).join(', ')\}. La somma \'e8 <b>$\{f(S)\}</b>.`,hp)\}\},\
+\{id:13,l:3,n:'Caccia all\'92errore',e:'
+\f4 \uc0\u55357 \u56589 
+\f3 ',d:'Trova il bug',rules:'Uno studente ha svolto l\'92esercizio. Tocca la riga dove c\'92\'e8 l\'92errore. Se \'e8 tutto giusto, tocca \'abNessun errore\'bb.',sig:['sis.','\uc0\u9675 ','\u9679 ','
+\f5 \uc0\u8709 
+\f3 '],N:7,\
+gen:i=>(\{t:'err',...ERR[i]\})\},\
+\{id:14,l:3,n:'Costruisci la trappola',e:'
+\f4 \uc0\u55358 \u56996 
+\f3 ',d:'Da solo o a coppie',rules:'Trova il sistema che ha ESATTAMENTE la soluzione indicata. Attenzione: se davanti a x c\'92\'e8 un numero negativo, il segno si gira!',sig:['sis.','x','
+\f5 \uc0\u8477 
+\f3 '],N:5,\
+gen:i=>\{const a=r(-6,1),b=a+r(2,6),ia=r(0,1),ib=r(0,1),T=\{a,ai:ia,b,bi:ib\},c1=cons('lo',a,ia,1),c2=cons('hi',b,ib,0),m=c1.m,k=c1.k;\
+const W1=raw(k,m,ia?'\uc0\u8805 ':'>',k*a+m),W2=cons('lo',a,!ia,1),W3=raw(c2.k,c2.m,ib?'\u8805 ':'\u8804 ',c2.n);\
+const S=[[c1,c2,1],[W1,c2,0],[W2,c2,0],[c1,W3,0]],o=shuf([S[0],...shuf(S.slice(1).filter(s=>!eq(inter(s[0].iv,s[1].iv),T))).slice(0,2)]);\
+return mc(`Quale sistema ha come soluzione <b>$\{txt(T).replace(/</g,'&lt;')\}</b>?`,nl([\{v:T,c:C4,label:'Soluzione voluta'\}]),o.map(s=>(\{h:sysH([s[0],s[1]].map(c=>(\{txt:c.txt.replace('<','&lt;').replace('>','&gt;')\}))),ok:s[2]==1\})),`Il sistema giusto \'e8: $\{c1.txt\} \uc0\u8594  $\{txt(c1.iv)\}; $\{c2.txt\} \u8594  $\{txt(c2.iv)\}. Con il numero negativo il segno si gira!`)\}\},\
+\{id:15,l:3,n:'Sfida finale',e:'
+\f4 \uc0\u55356 \u57286 
+\f3 ',d:'Tutto mescolato',rules:'10 domande miste, dalla pi\'f9 facile alla pi\'f9 difficile. Ce la puoi fare!',sig:['
+\f5 \uc0\u8709 
+\f3 ','
+\f5 \uc0\u8477 
+\f3 ','x','sis.','\uc0\u9675 ','\u9679 '],N:10,\
+gen:i=>\{const pool=i<3?[2,3,1]:i<7?[6,9,10,2]:[12,11,14,10];return G[pick(pool)-1].gen(i%6)\}\}];\
+/* ----------- applicazione ----------- */\
+let S=\{\},snd=true,TM=null,V=null;\
+const store=()=>\{try\{return JSON.parse(localStorage.getItem('dq')||'\{\}')\}catch(e)\{return\{\}\}\};\
+const save=(id,s)=>\{try\{const o=store();o[id]=Math.max(o[id]||0,s);localStorage.setItem('dq',JSON.stringify(o))\}catch(e)\{\}\};\
+function tsnd()\{snd=!snd;$('#bs').textContent='
+\f4 \uc0\u55357 \u56586 
+\f3  Voce: '+(snd?'s\'ec':'no');if(!snd)speechSynthesis.cancel()\}\
+function voice()\{const vs=speechSynthesis.getVoices().filter(v=>/^it/i.test(v.lang));return vs.find(v=>/google|natural|premium|elsa|isabella|alice|federica|luca|siri/i.test(v.name))||vs[0]||null\}\
+function say(t)\{if(!snd||!window.speechSynthesis)return;try\{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='it-IT';const v=voice();if(v)u.voice=v;u.rate=.95;u.pitch=1.1;speechSynthesis.speak(u)\}catch(e)\{\}\}\
+function toast(t,ok)\{const d=document.createElement('div');d.className='toast '+(ok?'ok':'no');d.textContent=(ok?'
+\f4 \uc0\u11088 
+\f3  ':'
+\f4 \uc0\u55357 \u56475 
+\f3  ')+t;document.body.appendChild(d);setTimeout(()=>d.remove(),1700)\}\
+const POS=['Bravo!','Esatto!','Fantastico!','Perfetto!','Vai!'],NEG=['Ops!','Non scoraggiarti!','Riprova e vedrai che ci riesci!'];\
+function good()\{const t=pick(POS);say(t);toast(t,1);S.pts+=S.tries==0?10:S.tries==1?5:2;if(!S.tries)S.ok1++;$('#pts').textContent=S.pts;done()\}\
+function bad()\{const t=pick(NEG);say(t);toast(t,0);S.tries++\}\
+function done()\{clearInterval(TM);const b=$('#fb');if(b)b.innerHTML=(S.q.why?`<div class="box good2">
+\f4 \uc0\u55357 \u56481 
+\f3  $\{S.q.why\}</div>`:'')+`<button class="btn" style="background:#ffd9b3" onclick="nxt()">Avanti 
+\f5 \uc0\u10140 
+\f3 </button>`\}\
+function nxt()\{S.i++;S.i>=S.g.N?fin():(S.q=S.g.gen(S.i),draw())\}\
+function home()\{clearInterval(TM);speechSynthesis&&speechSynthesis.cancel();const st=store();const L=[['','
+\f4 \uc0\u55356 \u57137 
+\f3  Livello 1 \'96 Facile: capisco i segni e la retta'],['','
+\f4 \uc0\u55356 \u57151 
+\f3  Livello 2 \'96 Medio: risolvo e uso i sistemi'],['','
+\f4 \uc0\u55356 \u57139 
+\f3  Livello 3 \'96 Difficile: sfide e strategie']];\
+$('#app').innerHTML=`<div class="box rules"><b>Benvenuto!</b> Qui impari le <b>disequazioni</b> giocando, dal pi\'f9 facile al pi\'f9 difficile. Prima di cominciare puoi leggere la <b>Guida veloce</b>. Le voci dicono \'abBravo!\'bb quando sei esatto e \'abRiprova\'bb quando sbagli: sbagliare fa parte dell\'92imparare.</div>`+\
+[1,2,3].map(l=>`<h2>$\{L[l-1][1]\}</h2><div class="grid">$\{G.filter(g=>g.l==l).map(g=>`<button class="card L$\{l\}" onclick="play($\{g.id\})"><b>$\{g.e\} $\{g.id\}. $\{g.n\}</b><span>$\{g.d\}</span><div>$\{'
+\f4 \uc0\u11088 
+\f3 '.repeat(st[g.id]||0)||'
+\f5 \uc0\u9734 \u9734 \u9734 
+\f3 '\}</div></button>`).join('')\}</div>`).join('')\}\
+function play(id,solo)\{if(id==14&&!solo)return choose();S=\{g:G[id-1],i:0,pts:0,ok1:0,tries:0,rules:1\};S.q=S.g.gen(0);draw()\}\
+function draw()\{clearInterval(TM);S.tries=0;const g=S.g,q=S.q;let h=`<div class="top"><button class="btn" onclick="home()">
+\f7 \uc0\u11013 
+\f3  Menu</button><b>$\{g.e\} $\{g.n\}</b><span>Domanda $\{S.i+1\}/$\{g.N\} \'b7 Punti: <b id="pts">$\{S.pts\}</b></span></div>\
+<div class="box rules"><b>Come si gioca:</b> $\{g.rules\}<div class="sig"><b>Sigle:</b> $\{sigDesc(g.sig)\}</div></div>`;\
+if(g.timer)h+=`<label><input type="checkbox" id="tmr"> 
+\f4 \uc0\u9201 
+\f3  Gioca con il tempo (20 secondi)</label><div class="bar" id="br" style="display:none"><i></i></div>`;\
+h+='<div class="box" id="qa">';\
+if(q.t=='mc')h+=`<p>$\{q.p\}</p>$\{q.vis\}<div class="opts">$\{q.o.map((o,j)=>`<button class="opt" data-j="$\{j\}">$\{o.h\}</button>`).join('')\}</div>$\{q.help?'<button class="btn" id="hp">
+\f4 \uc0\u55357 \u56481 
+\f3  Aiuto</button><div id="hb"></div>':''\}`;\
+if(q.t=='build')h+='<div id="bd"></div>';\
+if(q.t=='comp')h+=`$\{q.pair?`<p>
+\f4 \uc0\u55358 \u56809 
+\f3  <b>Giocatore $\{q.who\}</b>: risolvi il sistema del compagno e scrivi la soluzione.</p>$\{sysH(q.sys.map(c=>(\{txt:c.txt.replace('<','&lt;').replace('>','&gt;')\})))\}<div style="margin:10px 0"><button class="btn" id="hp2">
+\f4 \uc0\u55357 \u56481 
+\f3  Aiuto</button></div><div id="hb"></div>`:`<p>$\{q.ship?'
+\f4 \uc0\u55357 \u56994 
+\f3  Affonda questa nave: scrivi la disequazione esatta.':'
+\f4 \uc0\u55356 \u57263 
+\f3  Centra il bersaglio con la disequazione giusta.'\}</p>`\}<div id="cv"></div><div class="mode"><button class="btn on" data-m="seg">Tra due numeri</button> <button class="btn" data-m="ray">Semiretta</button></div><div class="cmp" id="cm"></div><p id="me"></p><button class="btn" style="background:#ffd9b3" id="go">$\{q.ship?'
+\f4 \uc0\u55357 \u56485 
+\f3  Spara!':'
+\f4 \uc0\u55356 \u57263 
+\f3  Controlla'\}</button>`;\
+if(q.t=='err')h+=`<p>Dove c\'92\'e8 l\'92errore?</p>$\{q.l.map((x,j)=>`<button class="btn line" data-j="$\{j\}"><b>Riga $\{j+1\}:</b> $\{x\}</button>`).join('')\}<button class="btn line" data-j="-1">
+\f4 \uc0\u55357 \u56397 
+\f3  Nessun errore: \'e8 tutto giusto</button>`;\
+if(q.t=='guess')h+=`<p id="cl"></p><div class="chips" id="ch"></div>`;\
+$('#app').innerHTML=h+'</div><div id="fb"></div>';\
+if(q.t=='mc')\{document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>\{if(b.classList.contains('bad'))return;if(q.o[b.dataset.j].ok)\{b.classList.add('good');document.querySelectorAll('.opt').forEach(x=>x.disabled=true);good()\}else\{b.classList.add('bad');bad()\}\});\
+if($('#hp'))$('#hp').onclick=()=>$('#hb').innerHTML=`<div class="box good2">$\{q.help\}</div>`;\
+if(g.timer)$('#tmr').onchange=e=>\{const b=$('#br');b.style.display=e.target.checked?'block':'none';clearInterval(TM);if(e.target.checked)tm()\}\}\
+if(q.t=='build')build();if(q.t=='comp')\{comp();if(q.pair)$('#hp2').onclick=()=>$('#hb').innerHTML='<div class="box good2">'+q.sys.map(c=>steps(c)).join('<hr>')+'</div>'\}if(q.t=='err')document.querySelectorAll('.line').forEach(b=>b.onclick=()=>\{if(b.classList.contains('bad'))return;const j=+b.dataset.j;if(j==q.e)\{b.classList.add('good2');q.why=q.w;good()\}else\{b.classList.add('bad');bad()\}\});\
+if(q.t=='guess')gs()\}\
+function tm()\{let t=20;const b=$('#br i');b.style.width='100%';TM=setInterval(()=>\{t-=.2;b.style.width=t*5+'%';if(t<=0)\{clearInterval(TM);bad();say('Tempo scaduto. Riprova!');tm()\}\},200)\}\
+function gs()\{const q=S.q;$('#cl').innerHTML='
+\f4 \uc0\u55357 \u56590 
+\f3  Indizi: '+q.cl.slice(0,q.seen).map(c=>`<span class="box" style="display:inline-block;padding:4px 10px">$\{c.txt.replace('<','&lt;').replace('>','&gt;')\}</span>`).join(' ');\
+$('#ch').innerHTML='';for(let x=-10;x<=10;x++)\{const on=q.cl.slice(0,q.seen).every(c=>c.ok(x)),b=document.createElement('button');b.className='btn chip';b.textContent=f(x);b.disabled=!on||(q.no||[]).includes(x);\
+b.onclick=()=>\{if(x==q.n)\{q.why=`Il numero segreto \'e8 <b>$\{f(x)\}</b>: rispetta tutti gli indizi.`;good()\}else\{(q.no=q.no||[]).push(x);if(q.seen<q.cl.length)q.seen++;bad();gs()\}\};$('#ch').appendChild(b)\}\}\
+function comp()\{const q=S.q;let mode='seg';const N=(id,d)=>`<select id="$\{id\}">$\{Array.from(\{length:21\},(_,j)=>j-10).map(x=>`<option value="$\{x\}"$\{x==d?' selected':''\}>$\{f(x)\}</option>`).join('')\}</select>`;\
+const sg=(id,a)=>`<select id="$\{id\}">$\{a.map(x=>`<option>$\{x\}</option>`).join('')\}</select>`;\
+const rd=()=>\{const g=id=>$('#'+id)&&$('#'+id).value;return mode=='seg'?\{a:+g('a'),ai:g('s1')=='\uc0\u8804 ',b:+g('b'),bi:g('s2')=='\u8804 '\}:from(g('s'),+g('a'))\};\
+const up=()=>\{const v=rd();$('#me').innerHTML='Hai scritto: <b>'+txt(v).replace(/</g,'&lt;')+'</b>';$('#cv').innerHTML=nl([...q.sunk.map(s=>(\{v:s,c:'#bbb'\})),...(q.hide?[]:[\{v:q.iv,c:C1,label:q.ship?'Nave':'Bersaglio'\}]),\{v:v,c:C2,label:'La tua risposta'\}])\};\
+const set=m=>\{mode=m;document.querySelectorAll('.mode .btn').forEach(b=>b.classList.toggle('on',b.dataset.m==m));$('#cm').innerHTML=m=='seg'?N('a',-2)+sg('s1',['<','\uc0\u8804 '])+'<b>x</b>'+sg('s2',['<','\u8804 '])+N('b',2):'<b>x</b>'+sg('s',['<','\u8804 ','>','\u8805 '])+N('a',0);document.querySelectorAll('#cm select').forEach(s=>s.onchange=up);up()\};\
+document.querySelectorAll('.mode .btn').forEach(b=>b.onclick=()=>set(b.dataset.m));set('seg');\
+$('#go').onclick=()=>\{if(eq(rd(),q.iv))\{q.why=q.pair?`Esatto! La soluzione <b>$\{txt(q.iv).replace(/</g,'&lt;')\}</b> coincide con quella scelta da Giocatore $\{q.by\}. Ottimo lavoro di squadra! Ora scambiatevi i ruoli.`:(q.ship?'
+\f4 \uc0\u55357 \u56485 
+\f3  Colpita e affondata! ':'')+'La soluzione esatta \'e8 <b>'+txt(q.iv).replace(/</g,'&lt;')+'</b>.';good()\}else bad()\}\}\
+function choose()\{$('#app').innerHTML=`<button class="btn" onclick="home()">
+\f7 \uc0\u11013 
+\f3  Menu</button><div class="box rules"><b>
+\f4 \uc0\u55358 \u56996 
+\f3  Costruisci la trappola</b><br>Come vuoi giocare?</div><div class="grid"><button class="card L3" onclick="play(14,1)"><b>
+\f4 \uc0\u55358 \u56781 
+\f3  Da solo</b><span>Scegli il sistema giusto tra tre proposte</span></button><button class="card L2" onclick="playPair()"><b>
+\f4 \uc0\u55357 \u56427 
+\f3  A coppie</b><span>Uno inventa il sistema, l\'92altro lo risolve</span></button></div>`\}\
+function playPair()\{const g=\{...G[13],n:'Costruisci la trappola (a coppie)',N:4,rules:'A coppie! Il Giocatore 1 sceglie una soluzione (un intervallo oppure una semiretta) e inventa un sistema di due disequazioni con almeno un numero negativo davanti a x (cos\'ec si deve girare il segno). Poi passa il computer al compagno, che deve risolverlo senza vedere la soluzione scelta. Se le due soluzioni coincidono, vince la coppia! Al giro dopo ci si scambia i ruoli.',sig:['sis.','x','
+\f5 \uc0\u8477 
+\f3 ','\uc0\u9675 ','\u9679 '],gen:i=>(\{t:'build',who:i%2?2:1\})\};S=\{g,i:0,pts:0,ok1:0,tries:0\};S.q=g.gen(0);draw()\}\
+function pass()\{$('#app').innerHTML=`<div class="box" style="text-align:center"><h2>
+\f4 \uc0\u55357 \u56577 
+\f3  Cambio di giocatore!</h2><p>Giocatore $\{S.q.by\}: la trappola \'e8 pronta, nascondi lo schermo.<br>Passa il computer a <b>Giocatore $\{S.q.who\}</b>.</p><button class="btn" style="background:#ffd9b3" onclick="draw()">Sono pronto: tocca a me 
+\f4 \uc0\u9989 
+\f3 </button></div>`\}\
+function build()\{const q=S.q,B=q.who;const opt=(lo,hi,d,z)=>\{let o='';for(let x=lo;x<=hi;x++)if(!(z&&x==0))o+=`<option value="$\{x\}"$\{x==d?' selected':''\}>$\{f(x)\}</option>`;return o\};\
+const sg=(id,l,d)=>`<select id="$\{id\}">$\{l.map(x=>`<option$\{x==d?' selected':''\}>$\{x\}</option>`).join('')\}</select>`;\
+const rw=n=>`<div class="cmp"><select id="k$\{n\}">$\{opt(-5,5,n==1?-1:1,1)\}</select> \'b7 x + <select id="m$\{n\}">$\{opt(-9,9,0)\}</select> $\{sg('o'+n,['<','\uc0\u8804 ','>','\u8805 '],n==1?'>':'<')\} <select id="n$\{n\}">$\{opt(-60,60,0)\}</select></div>`;\
+$('#bd').innerHTML=`<p>
+\f4 \uc0\u55358 \u56809 
+\f3  <b>Giocatore $\{B\}</b> costruisce la trappola. <b>Giocatore $\{3-B\}</b>: non guardare lo schermo!</p><p><b>1) Scegli la soluzione</b> (un intervallo oppure una semiretta)</p><div class="mode"><button class="btn on" data-m="seg">Tra due numeri</button> <button class="btn" data-m="ray">Semiretta</button></div><div class="cmp" id="tg"></div><p><b>2) Inventa due disequazioni</b> (almeno una con un numero negativo davanti a x)</p>$\{rw(1)\}$\{rw(2)\}<div id="lv"></div><button class="btn" id="idea">
+\f4 \uc0\u55357 \u56481 
+\f3  Idea (compila per me)</button> <button class="btn" style="background:#ffd9b3" id="okb" disabled>
+\f4 \uc0\u9989 
+\f3  Ho finito: passa al compagno</button>`;\
+let md='seg';const g=i=>$('#'+i).value,T=()=>md=='seg'?\{a:+g('a'),ai:g('s1')=='\uc0\u8804 ',b:+g('b'),bi:g('s2')=='\u8804 '\}:from(g('s'),+g('a')),CC=n=>raw(+g('k'+n),+g('m'+n),g('o'+n),+g('n'+n));\
+const up=()=>\{const t=T(),c1=CC(1),c2=CC(2),I=inter(c1.iv,c2.iv),same=!emp(t)&&eq(I,t),neg=c1.k<0||c2.k<0;\
+$('#lv').innerHTML=nl([\{v:t,c:C1,label:'Soluzione scelta'\},\{v:I,c:C2,label:'Soluzione del tuo sistema'\}])+`<p>$\{same?'
+\f4 \uc0\u9989 
+\f3 ':'
+\f4 \uc0\u10060 
+\f3 '\} La soluzione del tuo sistema $\{same?'coincide':'non coincide ancora'\} con quella scelta.<br>$\{neg?'
+\f4 \uc0\u9989 
+\f3 ':'
+\f4 \uc0\u10060 
+\f3 '\} C\'92\'e8 almeno un numero negativo davanti a x.</p>`+(emp(t)?'<p>
+\f4 \uc0\u9888 \u65039 
+\f3  Scegli un intervallo valido: il primo numero deve essere pi\'f9 piccolo del secondo.</p>':'');\
+$('#okb').disabled=!(same&&neg);q.c=[c1,c2,t]\};\
+document.querySelectorAll('#bd select').forEach(e=>e.onchange=up);\
+const tgH=m=>m=='seg'?`<select id="a">$\{opt(-10,10,1)\}</select>$\{sg('s1',['<','\uc0\u8804 '],'<')\}<b>x</b>$\{sg('s2',['<','\u8804 '],'<')\}<select id="b">$\{opt(-10,10,5)\}</select>`:`<b>x</b>$\{sg('s',['<','\u8804 ','>','\u8805 '],'>')\}<select id="a">$\{opt(-10,10,2)\}</select>`;\
+const setM=m=>\{md=m;document.querySelectorAll('#bd .mode .btn').forEach(x=>x.classList.toggle('on',x.dataset.m==m));$('#tg').innerHTML=tgH(m);document.querySelectorAll('#tg select').forEach(e=>e.onchange=up);up()\};\
+document.querySelectorAll('#bd .mode .btn').forEach(x=>x.onclick=()=>setM(x.dataset.m));\
+$('#idea').onclick=()=>\{const t=T();if(emp(t))return;let c1,c2;if(t.a==-INF)\{c1=cons('hi',t.b,t.bi,1);c2=cons('hi',t.b+3,1,0)\}else if(t.b==INF)\{c1=cons('lo',t.a,t.ai,1);c2=cons('lo',t.a-3,1,0)\}else\{c1=cons('lo',t.a,t.ai,1);c2=cons('hi',t.b,t.bi,0)\}[[1,c1],[2,c2]].forEach(([n,c])=>\{$('#k'+n).value=c.k;$('#m'+n).value=c.m;$('#o'+n).value=c.op;$('#n'+n).value=c.n\});up()\};\
+$('#okb').onclick=()=>\{const[c1,c2,t]=q.c;S.pts+=10;say('Perfetto!');S.q=\{t:'comp',pair:1,hide:1,iv:t,sunk:[],sys:[c1,c2],who:3-B,by:B\};pass()\};setM('seg')\}\
+function fin()\{const p=S.ok1/S.g.N,s=p>=.8?3:p>=.5?2:1;save(S.g.id,s);say(s==3?'Fantastico! Hai finito il gioco!':'Bravo! Hai finito il gioco!');\
+$('#app').innerHTML=`<div class="box" style="text-align:center"><h2>
+\f4 \uc0\u55356 \u57225 
+\f3  Gioco finito!</h2><div class="stars">$\{'
+\f4 \uc0\u11088 
+\f3 '.repeat(s)\}$\{'
+\f5 \uc0\u9734 
+\f3 '.repeat(3-s)\}</div><p>Risposte giuste al primo colpo: <b>$\{S.ok1\}</b> su $\{S.g.N\}<br>Punti: <b>$\{S.pts\}</b></p><button class="btn" onclick="play($\{S.g.id\})">
+\f4 \uc0\u55357 \u56577 
+\f3  Rigioca</button> <button class="btn" onclick="home()">
+\f4 \uc0\u55356 \u57312 
+\f3  Menu</button> $\{S.g.id<15?`<button class="btn" style="background:#ffd9b3" onclick="play($\{S.g.id+1\})">Prossimo gioco 
+\f5 \uc0\u10140 
+\f3 </button>`:''\}</div>`\}\
+function sigle()\{$('#app').innerHTML=`<button class="btn" onclick="home()">
+\f7 \uc0\u11013 
+\f3  Menu</button><div class="box"><h2>
+\f4 \uc0\u55357 \u56534 
+\f3  Sigle e simboli</h2>$\{Object.values(SIG).map(x=>`<p>$\{x\}</p>`).join('')\}<p>LIM, V/F, es., 
+\f5 \uc0\u8709 
+\f3 , C.E. sono spiegate per esteso anche nei singoli giochi.</p></div>`\}\
+function guida()\{const A=from('>',2),B=from('\uc0\u8804 ',5),I=inter(A,B);$('#app').innerHTML=`<button class="btn" onclick="home()">
+\f7 \uc0\u11013 
+\f3  Menu</button>\
+<div class="box L1"><h2>1. Che cos\'92\'e8 una disequazione?</h2><p>\'c8 come un\'92equazione, ma con <b>&lt; &gt; \uc0\u8804  \u8805 </b> al posto di \'ab=\'bb. Ha <b>tante</b> soluzioni. <br><b>es.</b> (esempio) x &gt; 3 vale per 4, 5, 6, 7\'85</p></div>\
+<div class="box L2"><h2>2. Sulla retta</h2><p>\uc0\u9675  <b>pallino vuoto</b>: il numero non va bene (&lt; e &gt;). \u9679  <b>pallino pieno</b>: il numero va bene (\u8804  e \u8805 ). La linea va verso i numeri giusti.</p>$\{nl([\{v:A,c:C2,label:'x > 2'\}])\}$\{nl([\{v:B,c:C3,label:'x \u8804  5'\}])\}</div>\
+<div class="box L3"><h2>3. Regola importante</h2><p>Se <b>divido o moltiplico per un numero negativo</b>, il segno <b>si gira</b>:<br>\uc0\u8722 2x &lt; 6 
+\f5 \uc0\u10140 
+\f3  x &gt; \uc0\u8722 3</p></div>\
+<div class="box L1"><h2>4. Sistema di disequazioni</h2><p>Sono pi\'f9 disequazioni insieme. La soluzione \'e8 la <b>parte comune</b> (intersezione). Se non c\'92\'e8 parte comune il sistema \'e8 <b>impossibile</b>: 
+\f5 \uc0\u8709 
+\f3  (insieme vuoto).</p>$\{nl([\{v:A,c:C2,label:'x > 2'\},\{v:B,c:C3,label:'x \uc0\u8804  5'\},\{v:I,c:C4,label:'Soluzione: 2 < x \u8804  5'\}])\}</div>\
+<button class="btn" style="background:#ffd9b3" onclick="home()">Ho capito, giochiamo! 
+\f5 \uc0\u10140 
+\f3 </button>`\}\
+if(typeof document!=='undefined')home();\
+</script>\
+</body>\
+</html>\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs24 \cf2 \cb1 \strokec2 \
+Visualizzazione di Disequazioni_in_gioco.html.\
+}
